@@ -1,15 +1,12 @@
 # Ex.05 Design a Website for Server Side Processing
-## Date:
+## Date:27.09.2025
 
 ## AIM:
- To design a website to calculate the power of a lamp filament in an incandescent bulb in the server side. 
+ To design a website to calculate the BMI and display on the client side as well as in the server side. 
 
 
 ## FORMULA:
-P = I<sup>2</sup>R
-<br> P --> Power (in watts)
-<br> I --> Intensity
-<br> R --> Resistance
+bmi=weight/height*height
 
 ## DESIGN STEPS:
 
@@ -32,13 +29,39 @@ Create a HTML file to implement form based input and output.
 Publish the website in the given URL.
 
 ## PROGRAM :
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BMI Calculator</title>
+</head>
+<body bgcolor="lightblue">
+    <center>
+        <h2>BMI Calculator</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <label>Height (m):</label><br>
+            <input type="text" name="height"><br><br>
+            <label>Weight (kg):</label><br>
+            <input type="text" name="weight"><br><br>
+            <button type="submit">Calculate</button>
+        </form>
 
+        
+
+        {% if BMI %}
+            <h3>Your BMI is: {{ BMI }}</h3>
+        {% endif %}
+    </center>
+</body>
+</html>
+```
 
 ## SERVER SIDE PROCESSING:
 
-
+![alt text](<Screenshot 2025-09-27 155439.png>)
 ## HOMEPAGE:
-
+![alt text](<Screenshot 2025-09-27 155049.png>)
 
 ## RESULT:
 The program for performing server side processing is completed successfully.
